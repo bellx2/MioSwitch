@@ -1,0 +1,783 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		284A45121DCA349B006B6201 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284A45111DCA349B006B6201 /* Regex.swift */; };
+		28B9E1D81DCADB6D009FCBAA /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B9E1D71DCADB6D009FCBAA /* NotificationCenter.framework */; };
+		28B9E1DB1DCADB6D009FCBAA /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9E1DA1DCADB6D009FCBAA /* TodayViewController.swift */; };
+		28B9E1DE1DCADB6D009FCBAA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B9E1DC1DCADB6D009FCBAA /* MainInterface.storyboard */; };
+		28B9E1E21DCADB6D009FCBAA /* MioWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 28B9E1D61DCADB6D009FCBAA /* MioWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3F6855D71DC99F35007DB84C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6855D61DC99F35007DB84C /* AppDelegate.swift */; };
+		3F6855D91DC99F35007DB84C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6855D81DC99F35007DB84C /* ViewController.swift */; };
+		3F6855DC1DC99F35007DB84C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6855DA1DC99F35007DB84C /* Main.storyboard */; };
+		3F6855DE1DC99F35007DB84C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F6855DD1DC99F35007DB84C /* Assets.xcassets */; };
+		3F6855E11DC99F35007DB84C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6855DF1DC99F35007DB84C /* LaunchScreen.storyboard */; };
+		3F6855EC1DC99F35007DB84C /* MioSwitchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6855EB1DC99F35007DB84C /* MioSwitchTests.swift */; };
+		3F6855F71DC99F35007DB84C /* MioSwitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6855F61DC99F35007DB84C /* MioSwitchUITests.swift */; };
+		3F6856051DC99F4D007DB84C /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 3F6856041DC99F4D007DB84C /* Podfile */; };
+		D69495E4BDE3949A21941F08 /* Pods_MioSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A2998661D0B49A111B6D87 /* Pods_MioSwitch.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		28B9E1E01DCADB6D009FCBAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F6855CB1DC99F35007DB84C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28B9E1D51DCADB6D009FCBAA;
+			remoteInfo = MioWidget;
+		};
+		3F6855E81DC99F35007DB84C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F6855CB1DC99F35007DB84C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F6855D21DC99F35007DB84C;
+			remoteInfo = MioSwitch;
+		};
+		3F6855F31DC99F35007DB84C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F6855CB1DC99F35007DB84C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F6855D21DC99F35007DB84C;
+			remoteInfo = MioSwitch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		28B9E1E61DCADB6D009FCBAA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				28B9E1E21DCADB6D009FCBAA /* MioWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1CA1AB3A63444F6CCD2B64A3 /* Pods-MioSwitch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MioSwitch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MioSwitch/Pods-MioSwitch.debug.xcconfig"; sourceTree = "<group>"; };
+		284A45111DCA349B006B6201 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		28B9E1D61DCADB6D009FCBAA /* MioWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MioWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		28B9E1D71DCADB6D009FCBAA /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		28B9E1DA1DCADB6D009FCBAA /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		28B9E1DD1DCADB6D009FCBAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		28B9E1DF1DCADB6D009FCBAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28B9E1E71DCAE2CF009FCBAA /* MioWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MioWidget.entitlements; sourceTree = "<group>"; };
+		28B9E1EA1DCB61D5009FCBAA /* MioSwitch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MioSwitch.entitlements; sourceTree = "<group>"; };
+		3E42CF26D2A760CEBDA030DE /* Pods-MioSwitch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MioSwitch.release.xcconfig"; path = "Pods/Target Support Files/Pods-MioSwitch/Pods-MioSwitch.release.xcconfig"; sourceTree = "<group>"; };
+		3F6855D31DC99F35007DB84C /* MioSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MioSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6855D61DC99F35007DB84C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3F6855D81DC99F35007DB84C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F6855DB1DC99F35007DB84C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F6855DD1DC99F35007DB84C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F6855E01DC99F35007DB84C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3F6855E21DC99F35007DB84C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F6855E71DC99F35007DB84C /* MioSwitchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MioSwitchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6855EB1DC99F35007DB84C /* MioSwitchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MioSwitchTests.swift; sourceTree = "<group>"; };
+		3F6855ED1DC99F35007DB84C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F6855F21DC99F35007DB84C /* MioSwitchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MioSwitchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6855F61DC99F35007DB84C /* MioSwitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MioSwitchUITests.swift; sourceTree = "<group>"; };
+		3F6855F81DC99F35007DB84C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F6856041DC99F4D007DB84C /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A8A2998661D0B49A111B6D87 /* Pods_MioSwitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MioSwitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		28B9E1D31DCADB6D009FCBAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28B9E1D81DCADB6D009FCBAA /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6855D01DC99F35007DB84C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D69495E4BDE3949A21941F08 /* Pods_MioSwitch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6855E41DC99F35007DB84C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6855EF1DC99F35007DB84C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28B9E1D91DCADB6D009FCBAA /* MioWidget */ = {
+			isa = PBXGroup;
+			children = (
+				28B9E1E71DCAE2CF009FCBAA /* MioWidget.entitlements */,
+				28B9E1DA1DCADB6D009FCBAA /* TodayViewController.swift */,
+				28B9E1DC1DCADB6D009FCBAA /* MainInterface.storyboard */,
+				28B9E1DF1DCADB6D009FCBAA /* Info.plist */,
+			);
+			path = MioWidget;
+			sourceTree = "<group>";
+		};
+		3F6855CA1DC99F35007DB84C = {
+			isa = PBXGroup;
+			children = (
+				3F6856041DC99F4D007DB84C /* Podfile */,
+				3F6855D51DC99F35007DB84C /* MioSwitch */,
+				3F6855EA1DC99F35007DB84C /* MioSwitchTests */,
+				3F6855F51DC99F35007DB84C /* MioSwitchUITests */,
+				28B9E1D91DCADB6D009FCBAA /* MioWidget */,
+				3F6855D41DC99F35007DB84C /* Products */,
+				8015BE9039F71FA0C36284EB /* Pods */,
+				5EA8A63F1DA972BF69C41952 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3F6855D41DC99F35007DB84C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F6855D31DC99F35007DB84C /* MioSwitch.app */,
+				3F6855E71DC99F35007DB84C /* MioSwitchTests.xctest */,
+				3F6855F21DC99F35007DB84C /* MioSwitchUITests.xctest */,
+				28B9E1D61DCADB6D009FCBAA /* MioWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F6855D51DC99F35007DB84C /* MioSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				28B9E1EA1DCB61D5009FCBAA /* MioSwitch.entitlements */,
+				3F6855D61DC99F35007DB84C /* AppDelegate.swift */,
+				3F6855D81DC99F35007DB84C /* ViewController.swift */,
+				3F6855DA1DC99F35007DB84C /* Main.storyboard */,
+				3F6855DD1DC99F35007DB84C /* Assets.xcassets */,
+				3F6855DF1DC99F35007DB84C /* LaunchScreen.storyboard */,
+				3F6855E21DC99F35007DB84C /* Info.plist */,
+				284A45111DCA349B006B6201 /* Regex.swift */,
+			);
+			path = MioSwitch;
+			sourceTree = "<group>";
+		};
+		3F6855EA1DC99F35007DB84C /* MioSwitchTests */ = {
+			isa = PBXGroup;
+			children = (
+				3F6855EB1DC99F35007DB84C /* MioSwitchTests.swift */,
+				3F6855ED1DC99F35007DB84C /* Info.plist */,
+			);
+			path = MioSwitchTests;
+			sourceTree = "<group>";
+		};
+		3F6855F51DC99F35007DB84C /* MioSwitchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3F6855F61DC99F35007DB84C /* MioSwitchUITests.swift */,
+				3F6855F81DC99F35007DB84C /* Info.plist */,
+			);
+			path = MioSwitchUITests;
+			sourceTree = "<group>";
+		};
+		5EA8A63F1DA972BF69C41952 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8A2998661D0B49A111B6D87 /* Pods_MioSwitch.framework */,
+				28B9E1D71DCADB6D009FCBAA /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8015BE9039F71FA0C36284EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1CA1AB3A63444F6CCD2B64A3 /* Pods-MioSwitch.debug.xcconfig */,
+				3E42CF26D2A760CEBDA030DE /* Pods-MioSwitch.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		28B9E1D51DCADB6D009FCBAA /* MioWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28B9E1E51DCADB6D009FCBAA /* Build configuration list for PBXNativeTarget "MioWidget" */;
+			buildPhases = (
+				28B9E1D21DCADB6D009FCBAA /* Sources */,
+				28B9E1D31DCADB6D009FCBAA /* Frameworks */,
+				28B9E1D41DCADB6D009FCBAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MioWidget;
+			productName = MioWidget;
+			productReference = 28B9E1D61DCADB6D009FCBAA /* MioWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		3F6855D21DC99F35007DB84C /* MioSwitch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F6855FB1DC99F35007DB84C /* Build configuration list for PBXNativeTarget "MioSwitch" */;
+			buildPhases = (
+				CE515292F84A5E385909F310 /* [CP] Check Pods Manifest.lock */,
+				3F6855CF1DC99F35007DB84C /* Sources */,
+				3F6855D01DC99F35007DB84C /* Frameworks */,
+				3F6855D11DC99F35007DB84C /* Resources */,
+				A1D54A1D940E481324135AC3 /* [CP] Embed Pods Frameworks */,
+				4C3C07A051B5258F94809D10 /* [CP] Copy Pods Resources */,
+				28B9E1E61DCADB6D009FCBAA /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28B9E1E11DCADB6D009FCBAA /* PBXTargetDependency */,
+			);
+			name = MioSwitch;
+			productName = MioSwitch;
+			productReference = 3F6855D31DC99F35007DB84C /* MioSwitch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3F6855E61DC99F35007DB84C /* MioSwitchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F6855FE1DC99F35007DB84C /* Build configuration list for PBXNativeTarget "MioSwitchTests" */;
+			buildPhases = (
+				3F6855E31DC99F35007DB84C /* Sources */,
+				3F6855E41DC99F35007DB84C /* Frameworks */,
+				3F6855E51DC99F35007DB84C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F6855E91DC99F35007DB84C /* PBXTargetDependency */,
+			);
+			name = MioSwitchTests;
+			productName = MioSwitchTests;
+			productReference = 3F6855E71DC99F35007DB84C /* MioSwitchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3F6855F11DC99F35007DB84C /* MioSwitchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F6856011DC99F35007DB84C /* Build configuration list for PBXNativeTarget "MioSwitchUITests" */;
+			buildPhases = (
+				3F6855EE1DC99F35007DB84C /* Sources */,
+				3F6855EF1DC99F35007DB84C /* Frameworks */,
+				3F6855F01DC99F35007DB84C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F6855F41DC99F35007DB84C /* PBXTargetDependency */,
+			);
+			name = MioSwitchUITests;
+			productName = MioSwitchUITests;
+			productReference = 3F6855F21DC99F35007DB84C /* MioSwitchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F6855CB1DC99F35007DB84C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Addon Inc";
+				TargetAttributes = {
+					28B9E1D51DCADB6D009FCBAA = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 3L2AQ75CVJ;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					3F6855D21DC99F35007DB84C = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3L2AQ75CVJ;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					3F6855E61DC99F35007DB84C = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3F6855D21DC99F35007DB84C;
+					};
+					3F6855F11DC99F35007DB84C = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3F6855D21DC99F35007DB84C;
+					};
+				};
+			};
+			buildConfigurationList = 3F6855CE1DC99F35007DB84C /* Build configuration list for PBXProject "MioSwitch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F6855CA1DC99F35007DB84C;
+			productRefGroup = 3F6855D41DC99F35007DB84C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F6855D21DC99F35007DB84C /* MioSwitch */,
+				3F6855E61DC99F35007DB84C /* MioSwitchTests */,
+				3F6855F11DC99F35007DB84C /* MioSwitchUITests */,
+				28B9E1D51DCADB6D009FCBAA /* MioWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28B9E1D41DCADB6D009FCBAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28B9E1DE1DCADB6D009FCBAA /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6855D11DC99F35007DB84C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F6855E11DC99F35007DB84C /* LaunchScreen.storyboard in Resources */,
+				3F6855DE1DC99F35007DB84C /* Assets.xcassets in Resources */,
+				3F6856051DC99F4D007DB84C /* Podfile in Resources */,
+				3F6855DC1DC99F35007DB84C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6855E51DC99F35007DB84C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6855F01DC99F35007DB84C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C3C07A051B5258F94809D10 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MioSwitch/Pods-MioSwitch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1D54A1D940E481324135AC3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MioSwitch/Pods-MioSwitch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE515292F84A5E385909F310 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28B9E1D21DCADB6D009FCBAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28B9E1DB1DCADB6D009FCBAA /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6855CF1DC99F35007DB84C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F6855D91DC99F35007DB84C /* ViewController.swift in Sources */,
+				3F6855D71DC99F35007DB84C /* AppDelegate.swift in Sources */,
+				284A45121DCA349B006B6201 /* Regex.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6855E31DC99F35007DB84C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F6855EC1DC99F35007DB84C /* MioSwitchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F6855EE1DC99F35007DB84C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F6855F71DC99F35007DB84C /* MioSwitchUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		28B9E1E11DCADB6D009FCBAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28B9E1D51DCADB6D009FCBAA /* MioWidget */;
+			targetProxy = 28B9E1E01DCADB6D009FCBAA /* PBXContainerItemProxy */;
+		};
+		3F6855E91DC99F35007DB84C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F6855D21DC99F35007DB84C /* MioSwitch */;
+			targetProxy = 3F6855E81DC99F35007DB84C /* PBXContainerItemProxy */;
+		};
+		3F6855F41DC99F35007DB84C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F6855D21DC99F35007DB84C /* MioSwitch */;
+			targetProxy = 3F6855F31DC99F35007DB84C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		28B9E1DC1DCADB6D009FCBAA /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28B9E1DD1DCADB6D009FCBAA /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		3F6855DA1DC99F35007DB84C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F6855DB1DC99F35007DB84C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3F6855DF1DC99F35007DB84C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F6855E01DC99F35007DB84C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		28B9E1E31DCADB6D009FCBAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = MioWidget/MioWidget.entitlements;
+				DEVELOPMENT_TEAM = 3L2AQ75CVJ;
+				INFOPLIST_FILE = MioWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.addon.MioSwitch.MioWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		28B9E1E41DCADB6D009FCBAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = MioWidget/MioWidget.entitlements;
+				DEVELOPMENT_TEAM = 3L2AQ75CVJ;
+				INFOPLIST_FILE = MioWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.addon.MioSwitch.MioWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		3F6855F91DC99F35007DB84C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F6855FA1DC99F35007DB84C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F6855FC1DC99F35007DB84C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CA1AB3A63444F6CCD2B64A3 /* Pods-MioSwitch.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MioSwitch/MioSwitch.entitlements;
+				DEVELOPMENT_TEAM = 3L2AQ75CVJ;
+				INFOPLIST_FILE = MioSwitch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.addon.MioSwitch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3F6855FD1DC99F35007DB84C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E42CF26D2A760CEBDA030DE /* Pods-MioSwitch.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MioSwitch/MioSwitch.entitlements;
+				DEVELOPMENT_TEAM = 3L2AQ75CVJ;
+				INFOPLIST_FILE = MioSwitch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.addon.MioSwitch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		3F6855FF1DC99F35007DB84C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MioSwitchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.addon.MioSwitchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MioSwitch.app/MioSwitch";
+			};
+			name = Debug;
+		};
+		3F6856001DC99F35007DB84C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MioSwitchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.addon.MioSwitchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MioSwitch.app/MioSwitch";
+			};
+			name = Release;
+		};
+		3F6856021DC99F35007DB84C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = MioSwitchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.addon.MioSwitchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MioSwitch;
+			};
+			name = Debug;
+		};
+		3F6856031DC99F35007DB84C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = MioSwitchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.addon.MioSwitchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MioSwitch;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28B9E1E51DCADB6D009FCBAA /* Build configuration list for PBXNativeTarget "MioWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28B9E1E31DCADB6D009FCBAA /* Debug */,
+				28B9E1E41DCADB6D009FCBAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F6855CE1DC99F35007DB84C /* Build configuration list for PBXProject "MioSwitch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F6855F91DC99F35007DB84C /* Debug */,
+				3F6855FA1DC99F35007DB84C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F6855FB1DC99F35007DB84C /* Build configuration list for PBXNativeTarget "MioSwitch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F6855FC1DC99F35007DB84C /* Debug */,
+				3F6855FD1DC99F35007DB84C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F6855FE1DC99F35007DB84C /* Build configuration list for PBXNativeTarget "MioSwitchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F6855FF1DC99F35007DB84C /* Debug */,
+				3F6856001DC99F35007DB84C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F6856011DC99F35007DB84C /* Build configuration list for PBXNativeTarget "MioSwitchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F6856021DC99F35007DB84C /* Debug */,
+				3F6856031DC99F35007DB84C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F6855CB1DC99F35007DB84C /* Project object */;
+}
