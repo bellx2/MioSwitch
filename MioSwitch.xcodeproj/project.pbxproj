@@ -524,7 +524,7 @@
 				CODE_SIGN_ENTITLEMENTS = MioWidget/MioWidget.entitlements;
 				DEVELOPMENT_TEAM = 3L2AQ75CVJ;
 				INFOPLIST_FILE = MioWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.addon.MioSwitch.MioWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -539,7 +539,7 @@
 				CODE_SIGN_ENTITLEMENTS = MioWidget/MioWidget.entitlements;
 				DEVELOPMENT_TEAM = 3L2AQ75CVJ;
 				INFOPLIST_FILE = MioWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.addon.MioSwitch.MioWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";

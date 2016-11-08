@@ -76,7 +76,7 @@ class ViewController: UIViewController {
 	}
 
 	@objc private func oAuthDone(notification: NSNotification?){
-		self.token = notification?.object as! String
+		self.token = (notification?.object as! String)
 		safariVC?.dismiss(animated: true, completion: { 
 			self.loadCoupon()
 		})
