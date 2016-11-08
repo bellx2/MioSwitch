@@ -6,6 +6,9 @@ target 'MioSwitch' do
 	pod 'RxCocoa'
 	pod 'APIKit', '~> 3.0'
 	pod 'SwiftyJSON'
+	pod 'Moya', '8.0.0-beta.3'
+	pod 'Moya/RxSwift'
+	pod 'Moya-ObjectMapper/RxSwift', :git => 'https://github.com/ivanbruel/Moya-ObjectMapper'
 end
 
 post_install do |installer|

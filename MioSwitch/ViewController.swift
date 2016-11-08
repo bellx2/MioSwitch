@@ -8,11 +8,11 @@
 
 import UIKit
 import SafariServices
-import Alamofire
 import RxCocoa
 import RxSwift
 import SwiftyJSON
 import Keys
+import Moya
 
 class ViewController: UIViewController {
 	
@@ -61,6 +61,17 @@ class ViewController: UIViewController {
 			}
 			print(value)
 		}).addDisposableTo(disposeBag)
+		
+	}
+	
+	func countCoupon(json:JSON) -> Int{
+		let coupons = json["couponInfo"][0]
+		var amount = 0
+		for (_,c) in coupons["coupon"]{
+			amount += c["volume"].intValue
+		}
+		print ("総残量:\(amount)")
+		return amount
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -95,37 +106,40 @@ class ViewController: UIViewController {
 	
 	@objc private func loadCoupon(){
 		print("loadCoupon! \(self.token)")
-		let url = "https://api.iijmio.jp/mobile/d/v1/coupon/"
-		let headers: HTTPHeaders = [
-			"X-IIJmio-Developer": self.devID!,
-			"X-IIJmio-Authorization": self.token!
-		]
-		Alamofire.request(url, headers: headers).responseJSON { response in
-			if response.result.isSuccess {
-				let json = JSON(data:response.data!)
-				print(json)
-				let coupons = json["couponInfo"][0]
-				var amount = 0
-				for (_,c) in coupons["coupon"]{
-					amount += c["volume"].intValue
+		let provider = MioProvider.DefaultProvider()
+		provider.request(.coupon(token:token!)) { (result) in
+			switch result{
+			case let .success(moyaResponse):
+				//let statusCode = moyaResponse.statusCode
+				do{
+					let data = try moyaResponse.mapJSON()
+					//print(data)
+					let amount = self.countCoupon(json:JSON(data))
+					self.coupon_avail.value = amount
+					self.saveSharedDefault(coupon: amount)
+				}catch{
+					//
 				}
-				print ("総残量:\(amount)")
-				self.coupon_avail.value = amount
-				self.saveSharedDefault(coupon: amount)
+			case let .failure(error):
+				print(error)
 			}
 		}
 	}
 	
 	private func loadPacket(){
-		let url = "https://api.iijmio.jp/mobile/d/v1/log/packet/"
-		let headers: HTTPHeaders = [
-			"X-IIJmio-Developer": self.devID!,
-			"X-IIJmio-Authorization": self.token!
-		]
-		Alamofire.request(url, headers: headers).responseJSON { response in
-			if response.result.isSuccess {
-				let json = JSON(data:response.data!)
-				print(json)
+		let provider = MioProvider.DefaultProvider()
+		provider.request(.packet(token:token!)) { (result) in
+			switch result{
+			case let .success(moyaResponse):
+				//let statusCode = moyaResponse.statusCode
+				do{
+					let data = try moyaResponse.mapJSON()
+					print(data)
+				}catch{
+					//
+				}
+			case let .failure(error):
+				print(error)
 			}
 		}
 	}
