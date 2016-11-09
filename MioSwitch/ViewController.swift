@@ -18,8 +18,8 @@ class ViewController: UIViewController {
 	
 	let disposeBag = DisposeBag()
 	let devID = MioswitchKeys().devID()	
-	var token:String?
-	var coupon_avail = Variable(0)
+	var token = Variable("")
+	var coupon = Variable(0)
 	var safariVC: SFSafariViewController?
 	
 	@IBOutlet weak var btn_login: UIButton!
@@ -28,38 +28,41 @@ class ViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		let shared = UserDefaults(suiteName: "group.jp.addon.mioswitch")
-		token = shared?.string(forKey: "token")
-		print("******* token : \(token)")
 
+		let shared		= UserDefaults(suiteName: "group.jp.addon.mioswitch")
+		token.value		= (shared?.string(forKey: "token")!)!
+		coupon.value	= (shared?.integer(forKey: "coupon"))!
+		
 		NotificationCenter.default.addObserver(self, selector: #selector(oAuthDone), name: Notification.Name("oAuthDone"), object: nil)
 		
-		//初期値設定
-		let amount = shared?.integer(forKey: "coupon")
-		if (amount != nil){
-			coupon_avail.value = amount!
-		}
+		token.asObservable().subscribe(onNext: { (str) in
+			if (str != ""){
+				self.loadCoupon()
+			}else{
+				self.saveSharedDefault(token: "")
+			}
+		}).addDisposableTo(disposeBag)
+
+		coupon.asObservable().subscribe(onNext: { (value) in
+			if (self.token.value != ""){
+				self.lbl_coupon.text = String(value) + " MB"
+			}else{
+				self.lbl_coupon.text = "------ MB"
+			}
+			self.saveSharedDefault(coupon: value)
+		}).addDisposableTo(disposeBag)
 		
 		btn_login.rx.tap.subscribe(onNext:{
-			if (self.token == ""){
+			if (self.token.value == ""){
 				self.openAuthURL()
 			}else{
-				self.token = ""
-				self.coupon_avail.value = 0
+				self.token.value = ""
+				self.coupon.value = 0
 			}
 		}).addDisposableTo(disposeBag)
 		
 		btn_miopon.rx.tap.subscribe(onNext:{
 			self.openMioPon()
-		}).addDisposableTo(disposeBag)
-		
-		coupon_avail.asObservable().subscribe(onNext: { (value) in
-			if (self.token == nil || self.token == ""){
-				self.lbl_coupon.text = " ----- MB"
-			}else{
-				self.lbl_coupon.text = String(value) + " MB"
-			}
-			print(value)
 		}).addDisposableTo(disposeBag)
 		
 	}
@@ -75,10 +78,7 @@ class ViewController: UIViewController {
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
-		//表示する時にリロード
-		if (token != nil && token != ""){
-			self.loadCoupon()
-		}
+		//
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -87,7 +87,7 @@ class ViewController: UIViewController {
 	}
 
 	@objc private func oAuthDone(notification: NSNotification?){
-		self.token = (notification?.object as! String)
+		self.token.value = (notification?.object as! String)
 		safariVC?.dismiss(animated: true, completion: { 
 			self.loadCoupon()
 		})
@@ -107,16 +107,13 @@ class ViewController: UIViewController {
 	@objc private func loadCoupon(){
 		print("loadCoupon! \(self.token)")
 		let provider = MioProvider.DefaultProvider()
-		provider.request(.coupon(token:token!)) { (result) in
+		provider.request(.coupon(token:token.value)) { (result) in
 			switch result{
 			case let .success(moyaResponse):
 				//let statusCode = moyaResponse.statusCode
 				do{
 					let data = try moyaResponse.mapJSON()
-					//print(data)
-					let amount = self.countCoupon(json:JSON(data))
-					self.coupon_avail.value = amount
-					self.saveSharedDefault(coupon: amount)
+					self.coupon.value = self.countCoupon(json:JSON(data))
 				}catch{
 					//
 				}
@@ -128,7 +125,7 @@ class ViewController: UIViewController {
 	
 	private func loadPacket(){
 		let provider = MioProvider.DefaultProvider()
-		provider.request(.packet(token:token!)) { (result) in
+		provider.request(.packet(token:token.value)) { (result) in
 			switch result{
 			case let .success(moyaResponse):
 				//let statusCode = moyaResponse.statusCode
@@ -147,6 +144,12 @@ class ViewController: UIViewController {
 	func saveSharedDefault(coupon:Int){
 		let shared = UserDefaults(suiteName: "group.jp.addon.mioswitch")
 		shared?.setValue(coupon, forKey: "coupon")
+		shared?.synchronize()
+	}
+	
+	func saveSharedDefault(token:String){
+		let shared = UserDefaults(suiteName: "group.jp.addon.mioswitch")
+		shared?.setValue(token, forKey: "token")
 		shared?.synchronize()
 	}
 }
