@@ -1,6 +1,7 @@
 platform :ios, '9.0'
 use_frameworks!
-target 'MioSwitch' do
+
+def mioPods
 	pod 'Alamofire', '~> 4.0'
 	pod 'RxSwift'
 	pod 'RxCocoa'
@@ -9,6 +10,14 @@ target 'MioSwitch' do
 	pod 'Moya', '8.0.0-beta.3'
 	pod 'Moya/RxSwift'
 	pod 'Moya-ObjectMapper/RxSwift', :git => 'https://github.com/ivanbruel/Moya-ObjectMapper'
+end
+
+target 'MioSwitch' do
+	mioPods
+end
+
+target 'MioWidget' do
+	mioPods
 end
 
 post_install do |installer|
