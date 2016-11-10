@@ -32,8 +32,14 @@ class ViewController: UIViewController {
 		let shared		= UserDefaults(suiteName: "group.jp.addon.mioswitch")
 		token.value		= (shared?.string(forKey: "token")!)!
 		coupon.value	= (shared?.integer(forKey: "coupon"))!
-		
-		NotificationCenter.default.addObserver(self, selector: #selector(oAuthDone), name: Notification.Name("oAuthDone"), object: nil)
+
+		NotificationCenter.default.rx.notification(Notification.Name("oAuthDone"))
+			.subscribe(onNext: { (notification) in
+			self.token.value = (notification.object as! String)
+			self.safariVC?.dismiss(animated: true, completion: {
+				self.loadCoupon()
+			})
+		}).addDisposableTo(disposeBag)
 		
 		token.asObservable().subscribe(onNext: { (str) in
 			if (str != ""){
@@ -86,13 +92,6 @@ class ViewController: UIViewController {
 		// Dispose of any resources that can be recreated.
 	}
 
-	@objc private func oAuthDone(notification: NSNotification?){
-		self.token.value = (notification?.object as! String)
-		safariVC?.dismiss(animated: true, completion: { 
-			self.loadCoupon()
-		})
-	}
-	
 	private func openAuthURL(){
 		let urlString = "https://api.iijmio.jp/mobile/d/v1/authorization/?response_type=token&client_id="+self.devID!+"&redirect_uri=mioswitchapp://callback/&state=test_state"
 		safariVC =  SFSafariViewController(url: NSURL(string: urlString)! as URL)
