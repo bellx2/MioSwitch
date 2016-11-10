@@ -60,7 +60,9 @@ class ViewController: UIViewController {
 		
 		btn_login.rx.tap.subscribe(onNext:{
 			if (self.token.value == ""){
-				self.openAuthURL()
+				let urlString = "https://api.iijmio.jp/mobile/d/v1/authorization/?response_type=token&client_id="+self.devID!+"&redirect_uri=mioswitchapp://callback/&state=test_state"
+				self.safariVC =  SFSafariViewController(url: NSURL(string: urlString)! as URL)
+				self.present(self.safariVC!, animated: true, completion: nil)
 			}else{
 				self.token.value = ""
 				self.coupon.value = 0
@@ -68,7 +70,7 @@ class ViewController: UIViewController {
 		}).addDisposableTo(disposeBag)
 		
 		btn_miopon.rx.tap.subscribe(onNext:{
-			self.openMioPon()
+			UIApplication.shared.open(URL(string: "miopon://")!, options: [:], completionHandler: nil)
 		}).addDisposableTo(disposeBag)
 		
 	}
@@ -92,19 +94,8 @@ class ViewController: UIViewController {
 		// Dispose of any resources that can be recreated.
 	}
 
-	private func openAuthURL(){
-		let urlString = "https://api.iijmio.jp/mobile/d/v1/authorization/?response_type=token&client_id="+self.devID!+"&redirect_uri=mioswitchapp://callback/&state=test_state"
-		safariVC =  SFSafariViewController(url: NSURL(string: urlString)! as URL)
-		self.present(safariVC!, animated: true, completion: nil)
-	}
-	
-	private func openMioPon(){
-		let urlString = "miopon://"
-		UIApplication.shared.open(URL(string: urlString)!, options: [:], completionHandler: nil)
-	}
-	
 	private func loadCoupon(){
-		print("loadCoupon! \(self.token)")
+		print("loadCoupon! \(self.token.value)")
 		let provider = MioProvider.DefaultProvider()
 		provider.request(.coupon(token:token.value)) { (result) in
 			switch result{
