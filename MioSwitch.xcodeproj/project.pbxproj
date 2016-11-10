@@ -21,6 +21,7 @@
 		3F6855F71DC99F35007DB84C /* MioSwitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6855F61DC99F35007DB84C /* MioSwitchUITests.swift */; };
 		3F6856051DC99F4D007DB84C /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 3F6856041DC99F4D007DB84C /* Podfile */; };
 		3FA3A61B1DD1D3B3004BAFB1 /* MioAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3A61A1DD1D3B3004BAFB1 /* MioAPI.swift */; };
+		C00A7311FF9ACBC6444E7A50 /* Pods_MioWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBCCC8EC5610FDCF1C56D /* Pods_MioWidget.framework */; };
 		D69495E4BDE3949A21941F08 /* Pods_MioSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A2998661D0B49A111B6D87 /* Pods_MioSwitch.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		19124CC508D3A28F12DB8EE3 /* Pods-MioWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MioWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-MioWidget/Pods-MioWidget.release.xcconfig"; sourceTree = "<group>"; };
 		1CA1AB3A63444F6CCD2B64A3 /* Pods-MioSwitch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MioSwitch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MioSwitch/Pods-MioSwitch.debug.xcconfig"; sourceTree = "<group>"; };
 		284A45111DCA349B006B6201 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		28B9E1D61DCADB6D009FCBAA /* MioWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MioWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,8 @@
 		3F6855F81DC99F35007DB84C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F6856041DC99F4D007DB84C /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3FA3A61A1DD1D3B3004BAFB1 /* MioAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MioAPI.swift; sourceTree = "<group>"; };
+		78AFBCCC8EC5610FDCF1C56D /* Pods_MioWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MioWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		934EACB98C6F31822756177C /* Pods-MioWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MioWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MioWidget/Pods-MioWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		A8A2998661D0B49A111B6D87 /* Pods_MioSwitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MioSwitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -97,6 +101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28B9E1D81DCADB6D009FCBAA /* NotificationCenter.framework in Frameworks */,
+				C00A7311FF9ACBC6444E7A50 /* Pods_MioWidget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +205,7 @@
 			children = (
 				A8A2998661D0B49A111B6D87 /* Pods_MioSwitch.framework */,
 				28B9E1D71DCADB6D009FCBAA /* NotificationCenter.framework */,
+				78AFBCCC8EC5610FDCF1C56D /* Pods_MioWidget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -209,6 +215,8 @@
 			children = (
 				1CA1AB3A63444F6CCD2B64A3 /* Pods-MioSwitch.debug.xcconfig */,
 				3E42CF26D2A760CEBDA030DE /* Pods-MioSwitch.release.xcconfig */,
+				934EACB98C6F31822756177C /* Pods-MioWidget.debug.xcconfig */,
+				19124CC508D3A28F12DB8EE3 /* Pods-MioWidget.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -220,9 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28B9E1E51DCADB6D009FCBAA /* Build configuration list for PBXNativeTarget "MioWidget" */;
 			buildPhases = (
+				075F7C57FAF8326D4730D0DB /* [CP] Check Pods Manifest.lock */,
 				28B9E1D21DCADB6D009FCBAA /* Sources */,
 				28B9E1D31DCADB6D009FCBAA /* Frameworks */,
 				28B9E1D41DCADB6D009FCBAA /* Resources */,
+				2B110102E07BDFC3E3AB64ED /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -391,6 +401,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		075F7C57FAF8326D4730D0DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2B110102E07BDFC3E3AB64ED /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MioWidget/Pods-MioWidget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4C3C07A051B5258F94809D10 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -433,7 +473,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -524,6 +564,7 @@
 /* Begin XCBuildConfiguration section */
 		28B9E1E31DCADB6D009FCBAA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 934EACB98C6F31822756177C /* Pods-MioWidget.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = MioWidget/MioWidget.entitlements;
 				DEVELOPMENT_TEAM = 3L2AQ75CVJ;
@@ -539,6 +580,7 @@
 		};
 		28B9E1E41DCADB6D009FCBAA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19124CC508D3A28F12DB8EE3 /* Pods-MioWidget.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = MioWidget/MioWidget.entitlements;
 				DEVELOPMENT_TEAM = 3L2AQ75CVJ;

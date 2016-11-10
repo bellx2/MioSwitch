@@ -8,6 +8,8 @@
 
 import UIKit
 import NotificationCenter
+import RxCocoa
+import RxSwift
 
 class TodayViewController: UIViewController, NCWidgetProviding {
         
@@ -17,12 +19,25 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 		self.extensionContext?.open(URL.init(string: urlString)!, completionHandler: nil)
 	}
 	
+	let disposeBag = DisposeBag()
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
 		let shared = UserDefaults(suiteName: "group.jp.addon.mioswitch")
-		let amount = shared?.integer(forKey: "coupon")
-		lbl_coupon.text = String(amount!) + " MB"
+		let coupon = Variable(shared?.integer(forKey: "coupon"))		
+		coupon.asObservable().subscribe(onNext: { (value) in
+			if (self.token.value != ""){
+				self.lbl_coupon.text = String(value) + " MB"
+			}else{
+				self.lbl_coupon.text = "------ MB"
+			}
+			self.saveSharedDefault(coupon: value)
+		}).addDisposableTo(disposeBag)
+		
+		amount.asObservable().subscribe(onNext: { (value) in
+			lbl_coupon.text = value + " MB"
+		}).addDisposableTo(disposeBag)
     }
     
     override func didReceiveMemoryWarning() {
