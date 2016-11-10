@@ -104,7 +104,7 @@ class ViewController: UIViewController {
 		UIApplication.shared.open(URL(string: urlString)!, options: [:], completionHandler: nil)
 	}
 	
-	@objc private func loadCoupon(){
+	private func loadCoupon(){
 		print("loadCoupon! \(self.token)")
 		let provider = MioProvider.DefaultProvider()
 		provider.request(.coupon(token:token.value)) { (result) in

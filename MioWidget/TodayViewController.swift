@@ -13,32 +13,38 @@ import RxSwift
 
 class TodayViewController: UIViewController, NCWidgetProviding {
         
-	@IBOutlet weak var lbl_coupon: UILabel!
+
+	@IBOutlet weak var btn_Coupon: UIButton!
+	
 	@IBAction func btn_detail(_ sender: Any) {
 		let urlString = "mioswitchapp://"
 		self.extensionContext?.open(URL.init(string: urlString)!, completionHandler: nil)
 	}
 	
 	let disposeBag = DisposeBag()
+	var token = Variable("")
+	var coupon = Variable(0)
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view from its nib.
+
 		let shared = UserDefaults(suiteName: "group.jp.addon.mioswitch")
-		let coupon = Variable(shared?.integer(forKey: "coupon"))		
+		coupon.value = (shared?.integer(forKey: "coupon"))!
+		token.value	= (shared?.string(forKey: "token"))!
+	
 		coupon.asObservable().subscribe(onNext: { (value) in
 			if (self.token.value != ""){
-				self.lbl_coupon.text = String(value) + " MB"
+				self.btn_Coupon.setTitle("\(value) MB", for: UIControlState.normal)
 			}else{
-				self.lbl_coupon.text = "------ MB"
+				self.btn_Coupon.setTitle("---- MB", for: UIControlState.normal)
 			}
-			self.saveSharedDefault(coupon: value)
 		}).addDisposableTo(disposeBag)
 		
-		amount.asObservable().subscribe(onNext: { (value) in
-			lbl_coupon.text = value + " MB"
+		btn_Coupon.rx.tap.subscribe(onNext:{ (value) in
+			print("tap!")
 		}).addDisposableTo(disposeBag)
-    }
+	
+	}
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -54,7 +60,5 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         completionHandler(NCUpdateResult.newData)
     }
-	
-	
-    
+
 }
